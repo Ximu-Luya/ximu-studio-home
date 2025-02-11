@@ -5,12 +5,7 @@ export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
-    // '@nuxt/image',
-    // '@nuxtjs/color-mode',
     '@pinia/nuxt',
-    // 'shadcn-nuxt',
-    // 'unplugin-info/nuxt',
-    // 'unplugin-analytics/nuxt',
     '@nuxt/eslint' // https://eslint.nuxt.com/packages/module
   ],
   nitro: {
@@ -27,7 +22,7 @@ export default defineNuxtConfig({
   alias: {},
   app: {
     head: {
-      title: '西木Nuxt模板项目',
+      title: '西木工作室官方网站',
       viewport: 'width=device-width,initial-scale=1,viewport-fit=cover',
       htmlAttrs: {
         lang: 'zh-CN'
@@ -37,19 +32,9 @@ export default defineNuxtConfig({
       script: []
     }
   },
-  // image: {},
   unocss: {
     preflight: true
   },
-  // analytics: {
-  //   umami: {
-  //     src: `umami.onekuma.cn`,
-  //     id: `6d532af3-e9bc-43a1-998b-8d3cae5fcbb6`
-  //   },
-  //   clarity: {
-  //     id: 'lbvx2f1py2'
-  //   }
-  // },
   eslint: {
     config: {
       stylistic: {

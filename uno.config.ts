@@ -3,10 +3,8 @@ import {
   presetUno,
   presetIcons,
   presetWebFonts,
-  presetAttributify,
   presetTypography,
-  transformerDirectives,
-  transformerVariantGroup
+  transformerDirectives
 } from 'unocss'
 
 export default defineConfig({
@@ -17,7 +15,6 @@ export default defineConfig({
   },
   presets: [
     presetUno(),
-    presetAttributify(),
     presetTypography(),
     presetIcons({
       scale: 1.1,
@@ -40,7 +37,7 @@ export default defineConfig({
       }
     })
   ],
-  transformers: [transformerDirectives(), transformerVariantGroup()],
+  transformers: [transformerDirectives()],
   shortcuts: {
     'border-base': 'border-gray/40 dark:border-gray/40',
     'text-base-50': 'text-neutral-50 dark:text-light-50',
