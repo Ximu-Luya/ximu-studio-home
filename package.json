@@ -20,5 +20,8 @@
     "unocss": "^0.59.4",
     "vue": "^3.4.23",
     "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@iconify-json/simple-icons": "^1.2.24"
   }
 }
