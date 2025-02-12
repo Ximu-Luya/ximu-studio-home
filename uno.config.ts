@@ -2,7 +2,6 @@ import {
   defineConfig,
   presetUno,
   presetIcons,
-  presetWebFonts,
   presetTypography,
   transformerDirectives
 } from 'unocss'
@@ -22,18 +21,6 @@ export default defineConfig({
         height: '1em',
         'flex-shrink': '0',
         display: 'inline-block'
-      }
-    }),
-    presetWebFonts({
-      provider: 'bunny',
-      fonts: {
-        sans: ['IBM Plex Sans', 'Noto Sans Simplified Chinese'],
-        mono: 'Input Mono',
-        quicksand: {
-          provider: 'fontshare',
-          name: 'Quicksand',
-          weights: ['1', '300', '400', '500', '600', '700']
-        }
       }
     })
   ],
