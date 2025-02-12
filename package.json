@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@iconify-json/icon-park-outline": "^1.1.15",
-    "@nuxt/eslint": "^0.3.8",
+    "@iconify-json/simple-icons": "^1.2.24",
     "@pinia/nuxt": "^0.5.1",
     "@unocss/nuxt": "^0.59.4",
     "@unocss/reset": "^0.59.4",
@@ -20,8 +20,5 @@
     "unocss": "^0.59.4",
     "vue": "^3.4.23",
     "vue-router": "^4.3.2"
-  },
-  "devDependencies": {
-    "@iconify-json/simple-icons": "^1.2.24"
   }
 }
