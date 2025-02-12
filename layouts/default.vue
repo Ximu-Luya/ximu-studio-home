@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <main class="min-h-screen w-full bg-[#1a1a2e] relative overflow-hidden">
+  <main class="min-h-screen w-full relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5"></div>
     <div class="relative">
       <NavBar />

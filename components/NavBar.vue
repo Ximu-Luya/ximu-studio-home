@@ -1,6 +1,7 @@
 <template>
   <nav
-    class="fixed z-50 px-6 py-4 w-full md:top-0 md:left-0 md:right-0 bottom-0 md:bottom-auto"
+    class="fixed z-50 px-6 py-4 w-full md:top-0 md:left-0 md:right-0 bottom-0 md:bottom-auto transition-all duration-300"
+    :class="[showNav ? 'opacity-100' : 'opacity-0 pointer-events-none']"
   >
     <div class="max-w-7xl mx-auto flex items-center justify-center">
       <div class="group flex items-center gap-x-2 bg-white/5 rounded-full border border-white/10 p-1 transition-all duration-300 hover:scale-[1.05] hover:bg-white/10">
@@ -27,7 +28,7 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { computed } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 
 const route = useRoute()
 const navItems = [
@@ -40,5 +41,19 @@ const navItems = [
 
 const activeIndex = computed(() => {
   return navItems.findIndex(item => item.link === route.path)
+})
+
+const showNav = ref(false)
+
+const handleScroll = () => {
+  showNav.value = window.scrollY > window.innerHeight * 0.8
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
