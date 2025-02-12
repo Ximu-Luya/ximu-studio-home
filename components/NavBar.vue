@@ -1,15 +1,21 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="text-2xl font-bold text-white/90 hover:text-white transition-colors">西木</div>
-      <div class="flex items-center space-x-12">
+  <nav
+    class="fixed z-50 px-6 py-4 w-full md:top-0 md:left-0 md:right-0 bottom-0 md:bottom-auto"
+  >
+    <div class="max-w-7xl mx-auto flex items-center justify-center">
+      <div class="flex items-center gap-x-2 bg-white/5 rounded-full border border-white/10 p-1">
         <NuxtLink
           v-for="item in navItems"
           :key="item.text"
           :to="item.link"
-          class="text-white/70 hover:text-white transition-colors text-sm tracking-wide"
+          class="flex items-center justify-center w-18 h-8 rounded-full transition-all duration-200"
+          :class="[
+            $route.path === item.link
+              ? 'bg-gradient-to-b from-white/15 to-white/5 shadow-lg text-white'
+              : 'text-white/40 hover:text-white/60 hover:bg-white/5'
+          ]"
         >
-          {{ item.text }}
+          <div :class="item.icon" class="text-2xl"></div>
         </NuxtLink>
       </div>
     </div>
@@ -18,10 +24,10 @@
 
 <script setup lang="ts">
 const navItems = [
-  { text: 'About', link: '/about' },
-  { text: 'Cool Stuff', link: '/cool-stuff' },
-  { text: 'Designs', link: '/designs' },
-  { text: 'Notes', link: '/notes' },
-  { text: 'Links', link: '/links' }
+  { text: '主页', link: '/', icon: 'i-icon-park-outline-home' },
+  { text: '项目', link: '/projects', icon: 'i-icon-park-outline-folder' },
+  { text: '笔记', link: '/notes', icon: 'i-icon-park-outline-notes' },
+  { text: '关于', link: '/about', icon: 'i-icon-park-outline-user' },
+  { text: '联系', link: '/contact', icon: 'i-icon-park-outline-mail' }
 ]
 </script>

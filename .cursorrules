@@ -1,0 +1,15 @@
+这是一个基于Nuxt3的个人网站项目，主要用于展示个人作品和笔记，支持移动端和PC端
+
+此项目技术栈如下：
+- Nuxt3
+- Unocss
+- @iconify-json/icon-park-outline
+- Pinia
+- 包管理：pnpm
+
+实现项目功能时，请遵循以下原则：
+- 使用Nuxt3的官方文档和最佳实践
+- 使用Unocss兼容的样式类
+- 使用@iconify-json/icon-park-outline的图标，并使用unocss的图标类，例如 `i-icon-park-outline-home` 
+- 当实现的页面内容有部分能够抽象封装为通用组件时，应当在 `components` 目录下创建通用组件
+- 实现页面内容时，需同时考虑移动端适配

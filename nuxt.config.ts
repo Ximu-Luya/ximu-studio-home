@@ -2,23 +2,28 @@
 export default defineNuxtConfig({
   debug: false,
   devtools: { enabled: false },
+
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt'
   ],
+
   nitro: {
     prerender: {
       autoSubfolderIndex: false
     }
   },
+
   components: [
     {
       path: '~/components',
       pathPrefix: false
     }
   ],
+
   alias: {},
+
   app: {
     head: {
       title: '西木工作室官方网站',
@@ -31,7 +36,10 @@ export default defineNuxtConfig({
       script: []
     }
   },
+
   unocss: {
     preflight: true
-  }
+  },
+
+  compatibilityDate: '2025-02-12'
 })
