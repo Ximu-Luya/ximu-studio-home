@@ -4,8 +4,8 @@
     :class="[showNav ? 'opacity-100' : 'opacity-0 pointer-events-none']"
   >
     <div class="max-w-7xl mx-auto flex items-center justify-center">
-      <div class="group flex items-center gap-x-2 bg-white/5 rounded-full border border-white/10 p-1 transition-all duration-300 hover:scale-[1.05] hover:bg-white/10">
-        <div class="absolute h-9 w-16 bg-gradient-to-b from-white/15 to-white/5 rounded-full shadow-lg transition-all duration-300" :style="{
+      <div class="group flex items-center gap-x-2 bg-gray-100/80 backdrop-blur rounded-full border border-gray-300/80 p-1 transition-all duration-300 hover:scale-[1.05] hover:bg-gray-200/80 shadow-lg shadow-gray-200/50">
+        <div class="absolute h-9 w-16 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full shadow-md transition-all duration-300" :style="{
           transform: `translateX(${activeIndex * 72}px)`,
         }" />
         <NuxtLink
@@ -16,7 +16,7 @@
           :class="[
             $route.path === item.link
               ? 'text-white'
-              : 'text-white/40 hover:text-white/60'
+              : 'text-gray-500 hover:text-gray-700'
           ]"
         >
           <div :class="item.icon" class="text-2xl"></div>
@@ -43,17 +43,37 @@ const activeIndex = computed(() => {
   return navItems.findIndex(item => item.link === route.path)
 })
 
-const showNav = ref(false)
+const isMobile = ref(false)
+const showNav = ref(true)
+
+const updateDeviceType = () => {
+  isMobile.value = window.innerWidth < 768
+}
 
 const handleScroll = () => {
-  showNav.value = window.scrollY > window.innerHeight * 0.8
+  // 在移动端始终显示
+  if (isMobile.value) {
+    showNav.value = true
+    return
+  }
+  
+  // 在PC端，首页时根据滚动位置显示，非首页始终显示
+  if (route.path === '/') {
+    showNav.value = window.scrollY > window.innerHeight * 0.2
+  } else {
+    showNav.value = true
+  }
 }
 
 onMounted(() => {
+  updateDeviceType()
+  handleScroll()
   window.addEventListener('scroll', handleScroll)
+  window.addEventListener('resize', updateDeviceType)
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', updateDeviceType)
 })
 </script>
