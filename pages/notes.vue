@@ -5,14 +5,14 @@
     <!-- 笔记列表 -->
     <div class="space-y-6">
       <article v-for="note in notes" :key="note.title"
-               class="backdrop-blur-sm bg-black/30 rounded-2xl p-6 md:p-8 hover:bg-black/40 transition-all duration-300">
+               class="backdrop-blur-lg bg-gray-800/30 rounded-2xl p-6 md:p-8 border border-gray-700/40 hover:bg-gray-800/40 transition-all duration-300 shadow-lg shadow-blue-900/10">
         <div class="flex flex-wrap gap-4 items-start justify-between mb-4">
           <h2 class="text-2xl font-bold text-white">{{ note.title }}</h2>
           <div class="flex items-center gap-4">
-            <span class="px-3 py-1 text-sm bg-white/15 text-gray-100 rounded-full">
+            <span class="px-3 py-1 text-sm bg-gray-700/40 text-gray-100 rounded-full border border-gray-600/30">
               {{ note.category }}
             </span>
-            <time class="text-sm text-gray-400">{{ note.date }}</time>
+            <time class="text-sm text-gray-300">{{ note.date }}</time>
           </div>
         </div>
         <p class="text-gray-200 leading-relaxed">{{ note.description }}</p>

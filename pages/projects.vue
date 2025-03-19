@@ -4,12 +4,12 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div v-for="project in projects" :key="project.title" 
-           class="group backdrop-blur-sm bg-black/50 rounded-2xl overflow-hidden hover:bg-black/60 transition-all duration-300">
+           class="group backdrop-blur-lg bg-gray-800/30 rounded-2xl overflow-hidden border border-gray-700/40 hover:bg-gray-800/40 transition-all duration-300 shadow-lg shadow-blue-900/10">
         <!-- 项目图片 -->
         <div class="relative h-48 overflow-hidden">
           <img :src="project.image" :alt="project.title" 
                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent"></div>
         </div>
         
         <!-- 项目信息 -->
@@ -20,7 +20,7 @@
           <!-- 技术标签 -->
           <div class="flex flex-wrap gap-2 mb-4">
             <span v-for="tag in project.tags" :key="tag"
-                  class="px-3 py-1 text-sm bg-white/15 text-gray-100 rounded-full">
+                  class="px-3 py-1 text-sm bg-gray-700/40 text-gray-100 rounded-full border border-gray-600/30">
               {{ tag }}
             </span>
           </div>

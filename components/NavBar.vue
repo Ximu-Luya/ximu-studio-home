@@ -4,8 +4,8 @@
     :class="[showNav ? 'opacity-100' : 'opacity-0 pointer-events-none']"
   >
     <div class="max-w-7xl mx-auto flex items-center justify-center">
-      <div class="group flex items-center gap-x-2 bg-gray-100/80 backdrop-blur rounded-full border border-gray-300/80 p-1 transition-all duration-300 hover:scale-[1.05] hover:bg-gray-200/80 shadow-lg shadow-gray-200/50">
-        <div class="absolute h-9 w-16 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full shadow-md transition-all duration-300" :style="{
+      <div class="group flex items-center gap-x-2 bg-gray-900/60 backdrop-blur rounded-full border border-gray-700/50 p-1 transition-all duration-300 hover:scale-[1.05] hover:bg-gray-800/70 shadow-lg shadow-purple-900/20">
+        <div class="absolute h-9 w-16 bg-gradient-to-b from-blue-600 to-purple-700 rounded-full shadow-md transition-all duration-300" :style="{
           transform: `translateX(${activeIndex * 72}px)`,
         }" />
         <NuxtLink
@@ -16,7 +16,7 @@
           :class="[
             $route.path === item.link
               ? 'text-white'
-              : 'text-gray-500 hover:text-gray-700'
+              : 'text-gray-400 hover:text-gray-200'
           ]"
         >
           <div :class="item.icon" class="text-2xl"></div>

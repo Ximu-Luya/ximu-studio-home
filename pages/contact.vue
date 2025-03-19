@@ -6,8 +6,8 @@
     <section class="mb-16">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div v-for="item in contactInfo" :key="item.title"
-             class="backdrop-blur-sm bg-black/20 rounded-xl p-6 hover:bg-black/30 transition-all duration-300">
-          <div :class="[item.icon, 'text-3xl text-white mb-4']"></div>
+             class="backdrop-blur-lg bg-gray-800/30 rounded-xl p-6 border border-gray-700/40 hover:bg-gray-800/40 transition-all duration-300 shadow-lg shadow-blue-900/10">
+          <div :class="[item.icon, 'text-3xl text-blue-400 mb-4']"></div>
           <h3 class="text-lg font-medium text-white mb-2">{{ item.title }}</h3>
           <p class="text-gray-300">{{ item.value }}</p>
         </div>
@@ -17,12 +17,12 @@
     <!-- 社交媒体 -->
     <section>
       <h2 class="text-3xl font-bold text-white mb-8">社交媒体</h2>
-      <div class="backdrop-blur-sm bg-black/20 rounded-2xl p-6 md:p-8">
+      <div class="backdrop-blur-lg bg-gray-800/30 rounded-2xl p-6 md:p-8 border border-gray-700/40 shadow-lg shadow-blue-900/10">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <a v-for="link in socialLinks" :key="link.name"
              :href="link.url" target="_blank"
-             class="flex items-center gap-4 text-gray-300 hover:text-white transition-colors p-4 rounded-xl hover:bg-white/5">
-            <div :class="[link.icon, 'text-2xl']"></div>
+             class="flex items-center gap-4 text-gray-300 hover:text-white transition-colors p-4 rounded-xl hover:bg-gray-700/30">
+            <div :class="[link.icon, 'text-2xl text-blue-400']"></div>
             <span class="font-medium">{{ link.name }}</span>
           </a>
         </div>
