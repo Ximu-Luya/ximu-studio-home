@@ -2,35 +2,48 @@
   <div class="container mx-auto px-4 pt-24 md:pt-32 pb-8">
     <h1 class="text-4xl md:text-5xl font-bold text-white mb-12">项目展示</h1>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div v-for="project in projects" :key="project.title" 
-           class="group backdrop-blur-lg bg-gray-800/30 rounded-2xl overflow-hidden border border-gray-700/40 hover:bg-gray-800/40 transition-all duration-300 shadow-lg shadow-blue-900/10">
-        <!-- 项目图片 -->
-        <div class="relative h-48 overflow-hidden">
+    <div class="flex flex-col gap-24">
+      <div v-for="(project, index) in projects" :key="project.title" 
+           class="flex flex-col md:flex-row gap-8 items-center">
+        <!-- 项目图片 - 在奇数项目靠左，偶数项目靠右 -->
+        <div :class="[
+          'relative overflow-hidden w-full md:w-1/2 rounded-2xl border border-gray-700/40 shadow-lg shadow-blue-900/10',
+          { 'md:order-1': index % 2 !== 0 }
+        ]">
           <img :src="project.image" :alt="project.title" 
-               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent"></div>
+               class="w-full h-64 md:h-80 object-cover transition-transform duration-300 hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
         </div>
         
         <!-- 项目信息 -->
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-white mb-3">{{ project.title }}</h3>
-          <p class="text-gray-200 mb-4 line-clamp-3">{{ project.description }}</p>
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">{{ project.title }}</h3>
+          <p class="text-gray-200 mb-6">{{ project.description }}</p>
           
           <!-- 技术标签 -->
-          <div class="flex flex-wrap gap-2 mb-4">
+          <div class="flex flex-wrap gap-2 mb-6">
             <span v-for="tag in project.tags" :key="tag"
                   class="px-3 py-1 text-sm bg-gray-700/40 text-gray-100 rounded-full border border-gray-600/30">
               {{ tag }}
             </span>
           </div>
           
-          <!-- 项目链接 -->
-          <a :href="project.link" target="_blank"
-             class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
-            <span class="mr-2">查看项目</span>
-            <div class="i-icon-park-outline-arrow-right text-lg"></div>
-          </a>
+          <!-- 项目链接 - 按照图中样式修改 -->
+          <div class="mt-4">
+            <div class="text-gray-400 mb-2">/// ACTION</div>
+            <div class="flex flex-col gap-2">
+              <a :href="project.link" target="_blank"
+                 class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                <div class="i-icon-park-outline-chart-line-area text-xl mr-3 text-blue-500"></div>
+                <span>查看项目</span>
+              </a>
+              <a :href="project.link" target="_blank"
+                 class="inline-flex items-center text-green-400 hover:text-green-300 transition-colors">
+                <div class="i-icon-park-outline-info text-xl mr-3 text-green-500"></div>
+                <span>更多信息</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
