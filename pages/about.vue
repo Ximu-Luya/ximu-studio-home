@@ -96,7 +96,7 @@ const skills = [
 const socialLinks = [
   { name: 'GitHub', icon: 'i-simple-icons-github', url: 'https://github.com/Ximu-Luya' },
   { name: 'Bilibili', icon: 'i-simple-icons-bilibili', url: 'https://space.bilibili.com/20061123' },
-  { name: '掘金', icon: 'i-simple-icons-juejin', url: 'https://juejin.cn/user/421867901955214' },
+  { name: '掘金', icon: 'i-simple-icons-juejin', url: 'https://juejin.cn/user/421867901955214/posts' },
   { name: 'CSDN', icon: 'i-simple-icons-csdn', url: 'https://blog.csdn.net/qq_33866817' }
 ]
 </script>

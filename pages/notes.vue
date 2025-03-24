@@ -25,19 +25,33 @@
       </article>
       
       <!-- 更多内容链接区域 -->
-      <div class="mt-12 text-center backdrop-blur-lg bg-gray-800/30 rounded-2xl p-6 md:p-8 border border-gray-700/40 shadow-lg shadow-blue-900/10">
-        <h3 class="text-xl font-bold text-white mb-4">更多内容</h3>
-        <p class="text-gray-200 mb-6">访问以下平台查看我的更多文章与笔记</p>
-        <div class="flex justify-center gap-6">
+      <div class="mt-12 backdrop-blur-lg bg-gray-800/30 rounded-2xl p-6 md:p-8 border border-gray-700/40 shadow-lg shadow-blue-900/10">
+        <h3 class="text-2xl font-bold text-white mb-4 text-center">探索更多内容</h3>
+        <p class="text-gray-200 mb-8 text-center">访问我的其他平台获取更多技术文章与分享</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- CSDN -->
           <a href="https://blog.csdn.net/qq_33866817" target="_blank" 
-             class="flex items-center gap-2 px-5 py-3 bg-gray-700/40 text-gray-100 rounded-lg border border-gray-600/30 hover:bg-gray-700/60 transition-all">
-            <div class="i-icon-park-outline-link text-lg"></div>
-            <span>CSDN</span>
+             class="group flex items-center p-5 bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl border border-gray-700/50 hover:from-blue-900/40 hover:to-purple-900/40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+            <div class="flex justify-center items-center w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">
+              <div class="i-simple-icons-csdn text-3xl text-white"></div>
+            </div>
+            <div class="text-left">
+              <h4 class="text-xl font-bold text-white mb-1">CSDN</h4>
+              <p class="text-gray-300 text-sm">西木鹿亚</p>
+            </div>
           </a>
+          
+          <!-- 掘金 -->
           <a href="https://juejin.cn/user/421867901955214/posts" target="_blank" 
-             class="flex items-center gap-2 px-5 py-3 bg-gray-700/40 text-gray-100 rounded-lg border border-gray-600/30 hover:bg-gray-700/60 transition-all">
-            <div class="i-icon-park-outline-link text-lg"></div>
-            <span>掘金</span>
+             class="group flex items-center p-5 bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl border border-gray-700/50 hover:from-blue-900/40 hover:to-purple-900/40 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+            <div class="flex justify-center items-center w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">
+              <div class="i-simple-icons-juejin text-2xl text-white"></div>
+            </div>
+            <div class="text-left">
+              <h4 class="text-xl font-bold text-white mb-1">掘金</h4>
+              <p class="text-gray-300 text-sm">西木鹿亚</p>
+            </div>
           </a>
         </div>
       </div>
