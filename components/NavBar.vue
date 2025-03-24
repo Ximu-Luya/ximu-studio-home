@@ -35,8 +35,7 @@ const navItems = [
   { text: '主页', link: '/', icon: 'i-icon-park-outline-home' },
   { text: '项目', link: '/projects', icon: 'i-icon-park-outline-folder' },
   { text: '笔记', link: '/notes', icon: 'i-icon-park-outline-notes' },
-  { text: '关于', link: '/about', icon: 'i-icon-park-outline-user' },
-  { text: '联系', link: '/contact', icon: 'i-icon-park-outline-mail' }
+  { text: '关于', link: '/about', icon: 'i-icon-park-outline-user' }
 ]
 
 const activeIndex = computed(() => {

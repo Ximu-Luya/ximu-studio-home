@@ -2,7 +2,8 @@
   <div class="container mx-auto px-4 pt-24 md:pt-32 pb-8">
     <h1 class="text-4xl md:text-5xl font-bold text-white mb-8">关于我</h1>
     
-    <div class="flex flex-col md:flex-row gap-8">
+    <!-- 上部分：个人介绍和技能 -->
+    <div class="flex flex-col md:flex-row gap-8 mb-16">
       <!-- 左侧：个人介绍 -->
       <div class="md:w-3/5">
         <section class="mb-8 md:mb-0">
@@ -56,6 +57,34 @@
         </section>
       </div>
     </div>
+    
+    <!-- 中部分：联系信息 -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-white mb-8">联系方式</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div v-for="item in contactInfo" :key="item.title"
+             class="backdrop-blur-lg bg-gray-800/30 rounded-xl p-6 border border-gray-700/40 hover:bg-gray-800/40 transition-all duration-300 shadow-lg shadow-blue-900/10">
+          <div :class="[item.icon, 'text-3xl text-blue-400 mb-4']"></div>
+          <h3 class="text-lg font-medium text-white mb-2">{{ item.title }}</h3>
+          <p class="text-gray-300">{{ item.value }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 下部分：社交媒体 -->
+    <section>
+      <h2 class="text-3xl font-bold text-white mb-8">社交媒体</h2>
+      <div class="backdrop-blur-lg bg-gray-800/30 rounded-2xl p-6 md:p-8 border border-gray-700/40 shadow-lg shadow-blue-900/10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <a v-for="link in socialLinks" :key="link.name"
+             :href="link.url" target="_blank"
+             class="flex items-center gap-4 text-gray-300 hover:text-white transition-colors p-4 rounded-xl hover:bg-gray-700/30">
+            <div :class="[link.icon, 'text-2xl text-blue-400']"></div>
+            <span class="font-medium">{{ link.name }}</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -76,5 +105,18 @@ const skills = [
   { name: 'UI交互设计', level: 85, color: 'from-purple-500 to-pink-500' },
   { name: '移动开发', level: 60, color: 'from-orange-500 to-red-500' },
   { name: '产品思考', level: 75, color: 'from-blue-500 to-cyan-500' }
+]
+
+const contactInfo = [
+  { icon: 'i-icon-park-outline-mail', title: '邮箱', value: 'contact@ximu.com' },
+  { icon: 'i-icon-park-outline-phone', title: '电话', value: '+86 123 4567 8900' },
+  { icon: 'i-icon-park-outline-map', title: '地址', value: '中国 北京' }
+]
+
+const socialLinks = [
+  { name: 'GitHub', icon: 'i-simple-icons-github', url: 'https://github.com' },
+  { name: 'Bilibili', icon: 'i-simple-icons-bilibili', url: 'https://bilibili.com' },
+  { name: 'JueJin', icon: 'i-simple-icons-juejin', url: 'https://juejin.cn' },
+  { name: 'CSDN', icon: 'i-simple-icons-csdn', url: 'https://csdn.net' }
 ]
 </script>
