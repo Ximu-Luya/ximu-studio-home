@@ -33,8 +33,8 @@ import { computed, ref, onMounted, onUnmounted } from 'vue'
 const route = useRoute()
 const navItems = [
   { text: '主页', link: '/', icon: 'i-icon-park-outline-home' },
-  { text: '项目', link: '/projects', icon: 'i-icon-park-outline-folder' },
-  { text: '笔记', link: '/notes', icon: 'i-icon-park-outline-notes' },
+  { text: '项目', link: '/projects', icon: 'i-icon-park-outline-system' },
+  { text: '笔记', link: '/notes', icon: 'i-icon-park-outline-book-one' },
   { text: '关于', link: '/about', icon: 'i-icon-park-outline-user' }
 ]
 
