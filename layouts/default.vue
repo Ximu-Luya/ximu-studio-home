@@ -31,4 +31,29 @@
     linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
 }
+
+/* 自定义滚动条样式 */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 180, 0.6);
+}
+
+body {
+  background-color: #080C13;
+}
 </style>
