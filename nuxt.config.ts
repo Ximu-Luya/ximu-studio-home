@@ -26,12 +26,12 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: '西木工作室官方网站',
+      title: '西木工作室 / 西木Nishiki',
       viewport: 'width=device-width,initial-scale=1,viewport-fit=cover',
       htmlAttrs: {
         lang: 'zh-CN'
       },
-      link: [{ rel: 'icon', href: '/favicon.png' }],
+      link: [{ rel: 'icon', href: '/favicon.ico' }],
       meta: [],
       script: []
     }
